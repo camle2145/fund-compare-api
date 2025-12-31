@@ -6,6 +6,7 @@ import java.util.List;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -16,6 +17,7 @@ public class FundType {
     @Column(name = "stock_symbol", nullable = false)
     private String stockSymbol;
 
+    @OneToMany(mappedBy = "fund_type")
     private List<Fund> funds = new ArrayList<>();
 
     @Column(name = "name", nullable = false)
