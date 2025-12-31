@@ -1,4 +1,4 @@
-package prices;
+package com.leocam.prices;
 
 import java.time.LocalDate;
 import java.util.List;

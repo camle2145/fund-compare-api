@@ -1,4 +1,4 @@
-package prices;
+package com.leocam.prices;
 
 import java.io.Serializable;
 import java.time.LocalDate;
@@ -28,16 +28,8 @@ public class StockWeeklyPriceId implements Serializable {
         return stockSymbol;
     }
 
-    public void setStockSymbol(String stockSymbol) {
-        this.stockSymbol = stockSymbol;
-    }
-
     public LocalDate getDate() {
         return date;
-    }
-
-    public void setDate(LocalDate date) {
-        this.date = date;
     }
 
     @Override
