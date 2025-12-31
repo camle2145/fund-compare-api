@@ -24,7 +24,7 @@ public class Fund {
     private String provider;
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "stock_symbol", nullable = false)
+    @JoinColumn(name = "fund_type", referencedColumnName= "stock_symbol", nullable = false)
     private FundType fundType;
 
     @Column(name = "annual_fee")
