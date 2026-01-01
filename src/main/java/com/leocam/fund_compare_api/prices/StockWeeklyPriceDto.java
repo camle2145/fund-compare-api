@@ -4,6 +4,9 @@ import java.time.LocalDate;
 
 import lombok.Data;
 
+/**
+ * Data Transfer Object for StockWeeklyPrice entity.
+ */
 @Data
 public class StockWeeklyPriceDto {
 
