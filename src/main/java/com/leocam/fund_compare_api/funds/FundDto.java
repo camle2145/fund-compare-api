@@ -1,6 +1,8 @@
-package com.leocam.funds;
+package com.leocam.fund_compare_api.funds;
 
+import lombok.Data;
 
+@Data
 public class FundDto {
     private String name;
     private String provider;
@@ -13,8 +15,8 @@ public class FundDto {
     private Double monthylSub;
 
     public FundDto(Fund fund) {
-        this.name = fund.getName();
-        this.provider = fund.getProvider();
+        this.name = fund.getId().getName();
+        this.provider = fund.getId().getProvider();
         this.fundType = fund.getFundType().getStockSymbol();
         this.annualFee = fund.getAnnualFee();
         this.buyFee = fund.getBuyFee();

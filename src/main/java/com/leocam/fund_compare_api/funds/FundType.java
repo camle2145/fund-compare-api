@@ -1,4 +1,4 @@
-package com.leocam.funds;
+package com.leocam.fund_compare_api.funds;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class FundType {
     @Column(name = "stock_symbol", nullable = false)
     private String stockSymbol;
 
-    @OneToMany(mappedBy = "fund_type")
+    @OneToMany(mappedBy = "fundType")
     private List<Fund> funds = new ArrayList<>();
 
     @Column(name = "name", nullable = false)

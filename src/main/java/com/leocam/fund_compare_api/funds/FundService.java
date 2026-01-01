@@ -1,4 +1,4 @@
-package com.leocam.funds;
+package com.leocam.fund_compare_api.funds;
 
 import java.util.List;
 
@@ -16,14 +16,14 @@ public class FundService {
     }   
 
     public List<Fund> getFundsByStockSymbol(String stockSymbol) {
-        return fundRepository.findByTypeStockSymbolOrderByIdProviderAscIdNameAsc(stockSymbol);
+        return fundRepository.findByFundTypeStockSymbolOrderByIdProviderAscIdNameAsc(stockSymbol);
     }
 
     public List<Fund> getFundsByProvider(String provider) {
-        return fundRepository.findByTypeProviderOrderByIdNameAsc(provider);
+        return fundRepository.findByIdProviderOrderByIdNameAsc(provider);
     }
 
     public List<Fund> getFundsByStockSymbolAndProvider(String stockSymbol, String provider) {
-        return fundRepository.findByTypeStockSymbolAndIdProviderOrderByIdNameAsc(stockSymbol, provider);
+        return fundRepository.findByFundTypeStockSymbolAndIdProviderOrderByIdNameAsc(stockSymbol, provider);
     }
 }

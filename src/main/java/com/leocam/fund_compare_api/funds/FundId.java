@@ -1,4 +1,4 @@
-package com.leocam.funds;
+package com.leocam.fund_compare_api.funds;
 
 import java.io.Serializable;
 import java.util.Objects;

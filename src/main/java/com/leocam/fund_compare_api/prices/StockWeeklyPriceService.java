@@ -1,4 +1,4 @@
-package com.leocam.prices;
+package com.leocam.fund_compare_api.prices;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -17,14 +17,14 @@ public class StockWeeklyPriceService {
     }
 
     public List<StockWeeklyPrice> getPricesByStockSymbol(String stockSymbol) {
-        return stockWeeklyPriceRepository.findByIdStockSymbolOrderByDateAsc(stockSymbol);
+        return stockWeeklyPriceRepository.findByIdFundTypeStockSymbolOrderByIdDateAsc(stockSymbol);
     }
 
     public List<StockWeeklyPrice> getPricesByStockSymbolDesc(String stockSymbol) {
-        return stockWeeklyPriceRepository.findByIdStockSymbolOrderByDateDesc(stockSymbol);
+        return stockWeeklyPriceRepository.findByIdFundTypeStockSymbolOrderByIdDateDesc(stockSymbol);
     }
 
     public List<StockWeeklyPrice> getPricesByStockSymbolBetweenDates(String stockSymbol, LocalDate startDate, LocalDate endDate) {
-        return stockWeeklyPriceRepository.findByIdStockSymbolBetween(stockSymbol, startDate, endDate);
+        return stockWeeklyPriceRepository.findByIdFundTypeStockSymbolBetween(stockSymbol, startDate, endDate);
     }
 }

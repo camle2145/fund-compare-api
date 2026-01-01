@@ -1,5 +1,4 @@
-package com.leocam.funds;
-
+package com.leocam.fund_compare_api.funds;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
@@ -17,14 +16,8 @@ public class Fund {
     @EmbeddedId
     private FundId id;
 
-    @Column(name = "name", nullable = false)
-    private String name;
-
-    @Column(name = "provider", nullable = false)
-    private String provider;
-
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "fund_type", referencedColumnName= "stock_symbol", nullable = false)
+    @JoinColumn(name = "fund_type", nullable = false)
     private FundType fundType;
 
     @Column(name = "annual_fee")
@@ -46,14 +39,6 @@ public class Fund {
     private Double monthylSub;
 
     protected Fund() {}
-
-    public String getName() {
-        return name;
-    }
-
-    public String getProvider() {
-        return provider;
-    }
 
     public FundType getFundType() {
         return fundType;
