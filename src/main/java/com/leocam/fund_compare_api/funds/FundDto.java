@@ -2,6 +2,9 @@ package com.leocam.fund_compare_api.funds;
 
 import lombok.Data;
 
+/**
+ * Data Transfer Object for Fund entity.
+ */
 @Data
 public class FundDto {
     private String name;
