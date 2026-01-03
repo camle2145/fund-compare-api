@@ -7,16 +7,31 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * Controller for Fund-related endpoints.
+ */
 @RestController
 @RequestMapping("/api/funds")
 public class FundController {
 
+    /**
+     * Service for Fund operations.
+     */
     private final FundService fundService;
 
+    /**
+     * Constructor for FundController.
+     * @param fundService the FundService to be used
+     */
     public FundController(FundService fundService) {
         this.fundService = fundService;
     }
 
+    /**
+     * Get funds by stock symbol.
+     * @param stockSymbol the stock symbol
+     * @return list of FundDto
+     */
     @GetMapping("by-stock-symbol/{stockSymbol}")
     public List<FundDto> getFundsByStockSymbol(@PathVariable("stockSymbol") String stockSymbol) {
         return fundService.getFundsByStockSymbol(stockSymbol)
@@ -25,6 +40,11 @@ public class FundController {
                 .toList();
     }
 
+    /**
+     * Get funds by provider.
+     * @param provider the provider
+     * @return list of FundDto
+     */
     @GetMapping("by-provider/{provider}")
     public List<FundDto> getFundsByProvider(@PathVariable("provider") String provider) {
         return fundService.getFundsByProvider(provider)
@@ -34,6 +54,12 @@ public class FundController {
 
     }
 
+    /**
+     * Get funds by stock symbol and provider.
+     * @param stockSymbol the stock symbol
+     * @param provider the provider
+     * @return list of FundDto
+     */
     @GetMapping("by-stock-symbol-and-provider/{stockSymbol}/{provider}")
     public List<FundDto> getFundsByStockSymbolAndProvider(@PathVariable("stockSymbol") String stockSymbol,
             @PathVariable("provider") String provider) {
