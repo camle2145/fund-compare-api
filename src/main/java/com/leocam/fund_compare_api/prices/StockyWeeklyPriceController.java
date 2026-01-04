@@ -49,8 +49,8 @@ public class StockyWeeklyPriceController {
     @GetMapping("by-stock-symbol-between-dates/{stockSymbol}/{startDate}/{endDate}")
     public List<StockWeeklyPriceDto> getPricesByStockSymbolBetweenDates(
             @PathVariable("stockSymbol") String stockSymbol, 
-            @PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate startDate,
-            @PathVariable @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate endDate) {
+            @PathVariable("startDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
+            @PathVariable("endDate") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
         return stockWeeklyPriceService.getPricesByStockSymbolBetweenDates(stockSymbol, startDate, endDate)
                 .stream()
                 .map(StockWeeklyPriceDto::new)

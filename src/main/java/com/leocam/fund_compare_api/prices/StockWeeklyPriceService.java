@@ -43,6 +43,6 @@ public class StockWeeklyPriceService {
      * Get stock weekly prices by stock symbol between specified dates.
      */
     public List<StockWeeklyPrice> getPricesByStockSymbolBetweenDates(String stockSymbol, LocalDate startDate, LocalDate endDate) {
-        return stockWeeklyPriceRepository.findByIdFundTypeStockSymbolBetween(stockSymbol, startDate, endDate);
+        return stockWeeklyPriceRepository.findByIdFundTypeStockSymbolAndIdDateBetween(stockSymbol, startDate, endDate);
     }
 }

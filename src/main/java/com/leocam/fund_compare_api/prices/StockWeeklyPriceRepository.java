@@ -25,5 +25,5 @@ public interface StockWeeklyPriceRepository extends JpaRepository<StockWeeklyPri
     /**
      * Find stock weekly prices by stock symbol between specified dates.
      */
-    List<StockWeeklyPrice> findByIdFundTypeStockSymbolBetween(String stockSymbol, LocalDate startDate, LocalDate endDate);
+    List<StockWeeklyPrice> findByIdFundTypeStockSymbolAndIdDateBetween(String stockSymbol, LocalDate startDate, LocalDate endDate);
 }

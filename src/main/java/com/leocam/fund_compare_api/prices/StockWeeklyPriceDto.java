@@ -12,6 +12,7 @@ public class StockWeeklyPriceDto {
 
     private Double price;
     private LocalDate date;
+
     private String stockSymbol;
 
     public StockWeeklyPriceDto(StockWeeklyPrice stockWeeklyPrice) {
