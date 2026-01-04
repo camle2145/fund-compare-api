@@ -3,25 +3,31 @@ package com.leocam.fund_compare_api.funds;
 import java.io.Serializable;
 import java.util.Objects;
 
+import org.springframework.validation.annotation.Validated;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * Embeddable class representing the composite key for Fund entity.
  */
 @Embeddable
+@Validated
 public class FundId implements Serializable {
 
     /**
      * Provider of the fund.
      */
     @Column(name = "provider", nullable = false)
+    @NotNull
     private String provider;
     
     /**
      * Name of the fund.
      */
     @Column(name = "name", nullable = false)
+    @NotNull
     private String name;
 
     /**
