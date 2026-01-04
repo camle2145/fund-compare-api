@@ -3,16 +3,20 @@ package com.leocam.fund_compare_api.funds;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.validation.annotation.Validated;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.NotNull;
 
 /**
  * Entity class representing a type of fund (e.g. S & P 500, Total Market, etc.)
  */
 @Entity
+@Validated
 @Table(name = "fund_type")
 public class FundType {
 
@@ -21,6 +25,7 @@ public class FundType {
      */
     @Id
     @Column(name = "stock_symbol", nullable = false)
+    @NotNull
     private String stockSymbol;
 
     /**
