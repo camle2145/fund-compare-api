@@ -8,14 +8,7 @@ import org.springframework.core.env.Environment;
 @SpringBootApplication
 public class FundCompareApiApplication {
 
-	@Autowired
-	private static Environment env;
-
 	public static void main(String[] args) {
-
-		System.out.println("DB URL: " + env.getProperty("DB_URL"));
-		System.out.println("DB USER: " + env.getProperty("DB_USER"));	
-
 		SpringApplication.run(FundCompareApiApplication.class, args);
 	}
 
