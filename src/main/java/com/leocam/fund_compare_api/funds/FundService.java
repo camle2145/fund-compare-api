@@ -26,6 +26,22 @@ public class FundService {
     }   
 
     /**
+     * Get providers.
+     * @return
+     */
+    public List<String> getProviders() {
+        return fundRepository.findDistinctIdProvider();
+    }
+    
+    /**
+     * Get stock symbols.
+     * 
+     * @return list of stock symbols
+     */
+    public List<String> getStockSymbols() {
+        return fundRepository.findDistinctFundTypeStockSymbols();
+    }
+    /**
      * Get funds by stock symbol.
      * @param stockSymbol the stock symbol
      * @return list of Fund

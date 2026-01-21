@@ -11,6 +11,19 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FundRepository extends JpaRepository<Fund, FundId>{
 
+
+    /**
+     * Find distinct providers from fund IDs.
+     * @return list of providers
+     */
+    List<String> findDistinctIdProvider();
+    
+    /**
+     * Find distinct stock symbols from fund types.
+     * @return list of stock symbols
+     */
+    List<String> findDistinctFundTypeStockSymbols();
+
     /**
      * Find funds by stock symbol ordered by provider and name.
      * @param stockSymbol the stock symbol

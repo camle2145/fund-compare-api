@@ -28,6 +28,20 @@ public class FundController {
     }
 
     /**
+     * Get stock symbols.
+     * 
+     * @return list of stock symbols
+     */
+    @GetMapping("stock-symbols")
+    public List<String> getStockSymbols() {
+        return fundService.getStockSymbols();
+    }
+
+    @GetMapping("providers")
+    public List<String> getProviders() {
+        return fundService.getProviders();
+    }
+    /**
      * Get funds by stock symbol.
      * @param stockSymbol the stock symbol
      * @return list of FundDto
