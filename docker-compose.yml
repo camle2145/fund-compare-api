@@ -1,6 +1,6 @@
 services:
   postgres:
-    image: postgres:${POSGRES_VERSION}
+    image: postgres:${POSTGRES_VERSION}
     restart: always
     ports:
       - "${PORTS}"

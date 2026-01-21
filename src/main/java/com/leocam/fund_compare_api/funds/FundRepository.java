@@ -3,6 +3,7 @@ package com.leocam.fund_compare_api.funds;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -16,13 +17,15 @@ public interface FundRepository extends JpaRepository<Fund, FundId>{
      * Find distinct providers from fund IDs.
      * @return list of providers
      */
+    @Query("select distinct f.id.provider from Fund f")
     List<String> findDistinctIdProvider();
-    
+
     /**
      * Find distinct stock symbols from fund types.
      * @return list of stock symbols
      */
-    List<String> findDistinctFundTypeStockSymbols();
+    @Query("select ft.stockSymbol from FundType ft")
+    List<String> findAllStockSymbols();
 
     /**
      * Find funds by stock symbol ordered by provider and name.

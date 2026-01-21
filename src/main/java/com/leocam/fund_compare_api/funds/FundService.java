@@ -32,14 +32,14 @@ public class FundService {
     public List<String> getProviders() {
         return fundRepository.findDistinctIdProvider();
     }
-    
+
     /**
      * Get stock symbols.
      * 
      * @return list of stock symbols
      */
     public List<String> getStockSymbols() {
-        return fundRepository.findDistinctFundTypeStockSymbols();
+        return fundRepository.findAllStockSymbols();
     }
     /**
      * Get funds by stock symbol.
