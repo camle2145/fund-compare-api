@@ -12,13 +12,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface FundRepository extends JpaRepository<Fund, FundId>{
 
-    
-    /**
-     * Get all funds
-     * @return all funds
-     */
-    List<Fund> findAll();
-
     /**
      * Find distinct providers from fund IDs.
      * @return list of providers

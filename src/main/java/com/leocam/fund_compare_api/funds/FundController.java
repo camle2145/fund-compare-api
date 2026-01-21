@@ -32,7 +32,7 @@ public class FundController {
      * Get all funds. 
      * @return list of FundDtto
      */
-    @GetMapping
+    @GetMapping({"", "/"})
     public List<FundDto> getAllFunds() {
         return fundService.getFunds()
                 .stream()
@@ -44,12 +44,12 @@ public class FundController {
      * 
      * @return list of stock symbols
      */
-    @GetMapping("stock-symbols")
+    @GetMapping("/stock-symbols")
     public List<String> getStockSymbols() {
         return fundService.getStockSymbols();
     }
 
-    @GetMapping("providers")
+    @GetMapping("/providers")
     public List<String> getProviders() {
         return fundService.getProviders();
     }
@@ -58,7 +58,7 @@ public class FundController {
      * @param stockSymbol the stock symbol
      * @return list of FundDto
      */
-    @GetMapping("by-stock-symbol/{stockSymbol}")
+    @GetMapping("/by-stock-symbol/{stockSymbol}")
     public List<FundDto> getFundsByStockSymbol(@PathVariable("stockSymbol") String stockSymbol) {
         return fundService.getFundsByStockSymbol(stockSymbol)
                 .stream()
