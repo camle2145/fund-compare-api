@@ -25,6 +25,10 @@ public class FundService {
         this.fundRepository = fundRepository;
     }   
 
+    public List<Fund> getFunds() {
+        return fundRepository.findAll();
+    }
+
     /**
      * Get providers.
      * @return

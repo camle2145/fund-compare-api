@@ -27,6 +27,18 @@ public class FundController {
         this.fundService = fundService;
     }
 
+
+    /**
+     * Get all funds. 
+     * @return list of FundDtto
+     */
+    @GetMapping
+    public List<FundDto> getAllFunds() {
+        return fundService.getFunds()
+                .stream()
+                .map(FundDto::new)
+                .toList();
+    }
     /**
      * Get stock symbols.
      * 
